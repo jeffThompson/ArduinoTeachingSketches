@@ -6,8 +6,7 @@ Jeff Thompson | 2013 | www.jeffreythompson.org
 While a potentiometer doesn't require any other components, other analog
 sensors (like light sensors, etc) require a circuit called a voltage
 divider.  Here we use a simple analog sensor (such as a Light-Dependent-
-Resistor) to control the brightness
-of an LED!
+Resistor) to control the brightness of an LED!
 
 The basic formula (http://en.wikipedia.org/wiki/Voltage_divider):
 Vout = (R2/(R1+R2)) * Vin
@@ -15,22 +14,31 @@ Vout = (R2/(R1+R2)) * Vin
 Or, converted to a format that's more suitable for us:
 R2 = R1 / ((Vin/Vout)-1)
 
-If our sensor's output should be a range of 0-4.5V (nearly 5V) and
-our sensor's max resistance is 10Kohm:
-R2 = 10,000 / ((5/4.5)-1) = 10,000/0.1111 = 90Kohm
+BUT! Resistive sensors (like LDRs) are easy to figure out withou
+any math. Read the sensor in low (light) and high (dark) states
+using a multimeter. Find a value between the two and use that
+as the second resistor!
+
+For example, if the light reading is 1k ohm and dark is 10k ohm, 
+  10-1 = 9 / 2 = 4.5k ohm
+ 
+Pick a standard resistor close to that value: 5.6k ohm
 
 So, our diagram is:
-+5V --- 10k sensor --+--- ~90k resistor --- GND
-                     |
-                    A 0
++5V --- LDR --+--- 5.6k resistor --- GND
+              |
+             A 0
+
+Not NASA-ready, but pretty good for our purposes.
 
 MORE INFO:
-For a great explanation of the voltage divider, 
-see: http://www.sparkfun.com/tutorials/207
+For a great explanation of the voltage divider, see:
+http://www.sparkfun.com/tutorials/207
 
 CHALLENGE:
-+ Use a multimeter to find the min/max range for your other sensors;
-  calculate the necessary resistor to make an optimal voltage divider.
++ Use a multimeter to find the min/max range for your other 
+  sensors; calculate the necessary resistor to make an optimal
+  voltage divider using Ohms Law.
   
 */
 

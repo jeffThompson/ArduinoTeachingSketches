@@ -1,5 +1,6 @@
 
-#include <Servo.h>    // import some extra code for working with servos!
+// import some extra code for working with servos!
+#include <Servo.h>
 
 /*
 SERVO MOTORS
@@ -15,8 +16,14 @@ SERVO MOTORS
  in one direction, 180 = full speed in the other, and around 90
  will stop the motor.
  
- Our example 'tunes' these values and the time it takes to move
- 90º and for the motor to be still.
+ Our example 'tunes' these values, the time it takes to move 90º, and
+ what value to use for the motor to be still.
+ 
+ SCHEMATIC:
+ To hook up your motor, connect the following:
+   RED:    +5V on your Arduino
+   GREEN:  ground on the Arduino
+   BLACK:  digital pin used to control the servo
  
  CHALLENGE:
  + Can you create a variable for 90º to be reused or as a multiple?
@@ -28,7 +35,7 @@ SERVO MOTORS
  */
 
 int servoPin = 9;      // pin for servo
-Servo s;               // instance of the servo (max 8 per sketch)
+Servo s;               // instance of the servo class (max 8 per sketch)
 
 
 void setup() {

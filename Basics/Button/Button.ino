@@ -15,7 +15,7 @@ CHALLENGE:
 
 */
 
-int buttonPin =   0;      // pins for button and LED
+int buttonPin =   2;      // pins for button and LED
 int ledPin =      13;
 int buttonState = 0;     // store button's status - initialize to OFF
 

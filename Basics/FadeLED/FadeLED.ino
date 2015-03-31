@@ -18,7 +18,7 @@ CHALLENGE:
 
 */
 
-int ledPin =     13;          // LED connected to pin 13 (external LED is best for this example)
+int ledPin =     9;           // LED connected to pin 9 (external LED is best for this example)
 int brightness = 0;           // brightness of LED from 0-255
 int amount =     5;           // amount to inc/dec brightness each step
 

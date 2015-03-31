@@ -3,37 +3,44 @@
 SMOOTHING SENSORS
 Jeff Thompson | 2013 | wwww.jeffreythompson.org
 
-Analog sensors (and electronics in general) are messy!  They often behave erratically and
-inconsistently from reading to reading.  We can make this process better by keeping a
-running average of the past N sensor readings, dropping the oldest reading and adding a new
-one. While our sensor will be less responsive, it will also be more stable!
+Analog sensors (and electronics in general) are messy!  They often 
+behave erratically and inconsistently from reading to reading.  We 
+can make this process better by keeping a running average of the past
+N sensor readings, dropping the oldest reading and adding a new one. 
+While our sensor will be less responsive, it will also be more stable!
 
-This sketch is meant to be a little more readable than the Arduino example "Smoothing", though
-that example will have considerably better performance.
+This sketch is meant to be a little more readable than the Arduino 
+example "Smoothing", though that example will have considerably
+better performance.
 
 ** FOR LOOPS:
-A very powerful (but sometimes confusing) construct, 'for' loops iterate over a range of values;
-this is useful for going through a list (like this example) or doing things like initializing
-lots of input/output pins.
+A very powerful (but sometimes confusing) construct, 'for' loops iterate
+over a range of values; this is useful for going through a list (like 
+this example) or doing things like initializing lots of input/output pins.
 
-The basic structure:
-for (initial value; test condition; increment) {
-for (int index=0; index<numValues; index++) {
-  // do something here!  we can access the value 'index' as needed
-}
+The basic for loop structure:
+  for (initial value; test condition; increment) {
+  }
 
-The variable 'index' starts at 0, and is tested each loop.  If it is less than the # of
-values (the max of the loop), add one to it and execute some code.  If it is now >= to 
-the max for the loop, break out and continue with the program!
+Or, with real code:
+  for (int index=0; index<numValues; index++) {
+    // do something here!  we can access the value 'index' as needed
+  }
+
+The variable 'index' starts at 0, and is tested each loop.  If it is less
+than the # of values (the max of the loop), add one to it and execute some 
+code.  If it is now >= to the max for the loop, break out and continue
+with the program!
 
 */
 
 const int sensorPin =   A0;      // read sensor on analog pin 0
 const int numReadings = 10;      // how many readings to average
 
-int total =          0;          // keep a running total to average
-int averageReading = 0;          // average sensor value
-int index =          0;          // current position in the 'readings' list
+int total =             0;       // keep a running total to average
+int averageReading =    0;       // average sensor value
+int index =             0;       // current position in the 'readings' list
+
 int readings[numReadings];       // a list (called an 'array') of the past N readings
 
 
